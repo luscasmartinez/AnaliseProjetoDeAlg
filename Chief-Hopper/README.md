@@ -32,7 +32,19 @@ O objetivo é encontrar a energia mínima inicial para que o personagem possa pa
  3. Essa energia mínima é baseada na altura do edifício atual e na energia mínima anterior.
  4. Usamos Math.ceil para arredondar o resultado para cima, porque a energia precisa ser um número inteiro.
 
-## Trecho de código implementado 
+## Trecho de código implementado
+
+```
+public static int chiefHopper(List<Integer> arr) {
+        int minEnergy = 0;
+
+        for (int i = arr.size() - 1; i >= 0; i--) {
+            minEnergy = (int) Math.ceil((double) (minEnergy + arr.get(i)) / 2);
+        }
+
+        return minEnergy;
+    }
+```
 
 minEnergy representa a energia mínima necessária para o personagem.
 Começamos com minEnergy igual a 0, pois o personagem está no primeiro edifício.
