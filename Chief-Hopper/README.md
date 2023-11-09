@@ -49,4 +49,14 @@ public static int chiefHopper(List<Integer> arr) {
  - Iteramos pelos edifícios da direita para a esquerda (do último para o primeiro).
  - Para cada edifício, calculamos a energia mínima necessária com base na altura do edifício atual e na energia mínima que o personagem já tinha.
  - Usamos `Math.ceil` para garantir que o resultado seja um número inteiro e arredondado para cima, já que a energia precisa ser um número inteiro.
- - Finalmente, retornamos a energia mínima necessária no final, que é o resultado do cálculo para passar por todos os edifícios.
+
+ ### Como o calculo funciona 
+
+  ```
+  minEnergy = (int) Math.ceil((double) (minEnergy + arr.get(i)) / 2);
+  ```
+ - `arr.get(i)` é a altura do edifício atual.
+ - `minEnergy` + `arr.get(i)` representa a energia mínima necessária para passar do edifício anterior para o edifício atual. Estamos considerando a altura do edifício atual e a energia anterior.
+ - Dividimos esse valor por 2 e usamos `Math.ceil` para arredondar para cima, garantindo que a energia seja um número inteiro.
+ - Repetimos esse cálculo para cada edifício, atualizando `minEnergy` a cada iteração.
+ - No final, a função retorna `minEnergy`, que é a energia mínima necessária para o personagem passar por todos os edifícios com sucesso.
