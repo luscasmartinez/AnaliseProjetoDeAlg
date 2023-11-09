@@ -34,17 +34,15 @@ O objetivo é encontrar a energia mínima inicial para que o personagem possa pa
 
 ## Trecho de código implementado
 
-    ```
-    public static int chiefHopper(List<Integer> arr) {
-            int minEnergy = 0;
-
-            for (int i = arr.size() - 1; i >= 0; i--) {
-                minEnergy = (int) Math.ceil((double) (minEnergy + arr.get(i)) / 2);
-            }
-
-            return minEnergy;
+```
+public static int chiefHopper(List<Integer> arr) {
+        int minEnergy = 0;
+        for (int i = arr.size() - 1; i >= 0; i--) {
+            minEnergy = (int) Math.ceil((double) (minEnergy + arr.get(i)) / 2);
         }
-    ```
+        return minEnergy;
+    }
+```
 
  - `minEnergy` representa a energia mínima necessária para o personagem.
  - Começamos com minEnergy igual a 0, pois o personagem está no primeiro edifício.
